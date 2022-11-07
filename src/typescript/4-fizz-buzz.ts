@@ -42,10 +42,10 @@ function fizzBuzz(num: number): (number|string)[] {
         finalArray.push(i);
     }
     for (const element of finalArray) {
-        if (element % 3 === 0) {
+        if ((element % 3 === 0) && (element % 5 !== 0)) {
             const index:number = finalArray.indexOf(element);
             finalArray[index] = "Fizz";
-        } else if (element % 5 === 0) {
+        } else if ((element % 5 === 0) && (element % 3 !== 0)) {
             const index:number = finalArray.indexOf(element);
             finalArray[index] = "Buzz";
         } else if ((element % 5 === 0) && (element % 3 === 0)) {
@@ -58,4 +58,4 @@ function fizzBuzz(num: number): (number|string)[] {
     return finalArray;
 }
 
-console.log(fizzBuzz(15), "should be [1, 2, 'Fizz', 4, 'Buzz']")
+export default fizzBuzz;
