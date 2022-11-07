@@ -48,7 +48,7 @@ function fizzBuzz(num: number): (number|string)[] {
         } else if (element % 5 === 0) {
             const index:number = finalArray.indexOf(element);
             finalArray[index] = "Buzz";
-        } else if ((element % 3 === 0) && (element % 5 === 0)) {
+        } else if ((element % 5 === 0) && (element % 3 === 0)) {
             const index:number = finalArray.indexOf(element);
             finalArray[index] = "FizzBuzz";
         }
