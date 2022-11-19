@@ -17,8 +17,19 @@ RETURN resultArr
 
 */
 function countLetters(inputText: string, inputNumber: number): (string|number)[][] {
-    const resultArr = [["L", 2]]
+    const inputTextArr = inputText.split("");
+    const resultArr = []
     const uniqueLetters = countLetterOccurence(inputText);
+
+    for(const letter of uniqueLetters) {
+        let count = 0
+        for(const testingLetter of inputTextArr) {
+            if (letter === testingLetter){
+                count++
+            }
+        }
+        resultArr.push([letter, count])
+    }
 
     return resultArr
 }
@@ -35,3 +46,5 @@ function countLetterOccurence(inputString: string): string[] {
     }
     return returnArray
 }
+
+console.log(countLetters("Bellllll", 2));
