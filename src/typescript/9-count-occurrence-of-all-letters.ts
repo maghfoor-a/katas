@@ -25,5 +25,13 @@ function countLetters(inputText: string, inputNumber: number): (string|number)[]
 
 
 function countLetterOccurence(inputString: string): string[] {
-    return ["a", "b", "c"]
+    const stringArr = inputString.split("");
+    const returnArray: string[] = []
+
+    for (const letter of stringArr) {
+        if (!returnArray.includes(letter)) {
+            returnArray.push(letter);
+        }
+    }
+    return returnArray
 }
