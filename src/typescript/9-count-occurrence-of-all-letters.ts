@@ -18,6 +18,12 @@ RETURN resultArr
 */
 function countLetters(inputText: string, inputNumber: number): (string|number)[][] {
     const resultArr = [["L", 2]]
+    const uniqueLetters = countLetterOccurence(inputText);
 
     return resultArr
+}
+
+
+function countLetterOccurence(inputString: string): string[] {
+    return ["a", "b", "c"]
 }
