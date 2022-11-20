@@ -30,6 +30,7 @@ function countLetters(inputText: string, inputNumber: number): (string|number)[]
         }
         resultArr.push([letter, count])
     }
+    sortresultArray(resultArr);
 
     return resultArr
 }
@@ -48,3 +49,12 @@ function countLetterOccurence(inputString: string): string[] {
 }
 
 console.log(countLetters("Bellllll", 2));
+
+function sortresultArray(resultArr: (number|string)[][]): (number|string)[][] {
+    for (let i = 0; i < resultArr.length; i++) {
+        if (resultArr[i][1] < resultArr[i+1][1]) {
+            resultArr.splice(i, i+1, resultArr[i+1])
+        }
+    }
+    return resultArr
+}
