@@ -30,9 +30,15 @@ function countLetters(inputText: string, inputNumber: number): (string|number)[]
         }
         resultArr.push([letter, count])
     }
-    sortresultArray(resultArr);
 
-    return resultArr
+
+    resultArr.sort((function(index){
+        return function(a, b){
+            return (a[index] === b[index] ? 0 : (a[index] > b[index] ? -1 : 1));
+        };
+    })(1));
+
+    return resultArr.slice(0, inputNumber)
 }
 
 
@@ -45,16 +51,17 @@ function countLetterOccurence(inputString: string): string[] {
             returnArray.push(letter);
         }
     }
-    return returnArray
+    return returnArray.slice()
 }
 
-console.log(countLetters("Bellllll", 2));
+console.log(countLetters("hello", 2));
 
-function sortresultArray(resultArr: (number|string)[][]): (number|string)[][] {
-    for (let i = 0; i < resultArr.length; i++) {
-        if (resultArr[i][1] < resultArr[i+1][1]) {
-            resultArr.splice(i, i+1, resultArr[i+1])
-        }
-    }
-    return resultArr
-}
+// function sortresultArray(resultArr: (number|string)[][]): (number|string)[][] {
+//     for (let i = 0; i < resultArr.length; i++) {
+//         if (resultArr[i][1] < resultArr[i+1][1]) {
+//             const element = 
+//             resultArr.splice(i, i+1, resultArr[i+1]);
+//         }
+//     }
+//     return resultArr
+// }
