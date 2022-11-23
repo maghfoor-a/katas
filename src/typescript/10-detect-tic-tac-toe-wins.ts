@@ -20,6 +20,8 @@ possible ways of winning:
 359
 
 if either of those numbers have ONLY the values of either X OR O, then they win.
+
+come back to this later
 */
 interface BoardState {
     1: 'X'|'O'| '',
