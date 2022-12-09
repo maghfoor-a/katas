@@ -3,7 +3,12 @@
     "module": "commonjs",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "lib": ["DOM", "ES2016", "ES2017"],
+    "lib": [
+      "DOM",
+      "ES2016",
+      "ES2017",
+      "es2019"
+    ],
     "target": "es6",
     "noImplicitAny": true,
     "moduleResolution": "node",
@@ -11,8 +16,13 @@
     "strict": true,
     "baseUrl": ".",
     "paths": {
-      "*": ["node_modules/*", "src/types/*"]
+      "*": [
+        "node_modules/*",
+        "src/types/*"
+      ]
     }
   },
-  "include": ["src/**/*"],
+  "include": [
+    "src/**/*"
+  ],
 }
