@@ -4,10 +4,10 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "lib": [
+      "es2019",
       "DOM",
       "ES2016",
-      "ES2017",
-      "es2019"
+      "ES2017"
     ],
     "target": "es6",
     "noImplicitAny": true,
