@@ -15,24 +15,31 @@ Step 2: Create a method to generate an array thats only an array of numbers.
 Declare finalArray to be empty
 For each element of input array, push the element to finalArray
 
+Psuedo-code:
+DECLARE a variable INPUT_ARRAY
+FOR each element in INPUT_ARRAY 
+    if Element is an array 
+        remove the element from INPUT_ARRAY
+        use the spread operator to put it back into INPUT_ARRAY
+
 
 
 */
-type NestedArray = number | NestedArray[]
+type NumorNested = number | NumorNested[]
 
-const a: NestedArray = 10
-const b: NestedArray = [10]
-
-const c: NestedArray = [10, 20]
-const d: NestedArray = [10, 20, [2, 5, 6]]
-const e: NestedArray = [10, 20, [[[]]]]
-//const f: NestedArray = [10, 20, [null]]
-//nested array is either a number or an array of elements, each of which MUST match nestedArray type.
-
-
-const arrExample: NestedArray = [10, [2, 3, 6], [1, [100, [3, 4], 5]]]
-
-function sumNestedArrays(arrExample: NestedArray): number[] {
-
-    return [2]
+function sumNestedArrays(arrExample: NumorNested[]): number {
+    const finalArray: NumorNested[] = []
+    finalArray.push(arrExample);
+    let count = 0;
+    while (finalArray.length > 0) {
+        const element = finalArray.pop()!;
+        if (typeof element === "number") {
+            count += element;
+        } else {
+            finalArray.push(...element)
+        }
+    }
+    return count;
 }
+
+export default sumNestedArrays;
